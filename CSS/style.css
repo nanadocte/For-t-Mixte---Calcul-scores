@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;900&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100vh;
+    margin: 0;
+    background:
+      linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+      url('../img/6270608.jpg') no-repeat center center;
+    background-size: cover;
+    font-family: 'Josefin Sans', sans-serif;
+    
+}
+
+
+
+.hover-underline {
+    font-size: 100px;       /* taille du h1 */
+    color: beige;
+    position: relative;
+    display: inline-block;
+    font-weight: 900;
+    letter-spacing: 15px;
+    text-shadow: rgb(0, 0, 0) 20px 30px 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Lignes au-dessus et en dessous */
+.hover-underline::before,
+.hover-underline::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right,rgba(99, 177, 99, 0.9), rgba(234, 135, 14, 0.9));
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.4s ease-out;
+}
+
+.hover-underline::before {
+    top: -40px;        /* distance au-dessus du texte */
+    transform-origin: left;
+}
+
+.hover-underline::after {
+    bottom: -40px;     /* distance en dessous du texte */
+    transform-origin: right;
+}
+
+/* Au survol, les lignes apparaissent */
+.hover-underline:hover::before,
+.hover-underline:hover::after {
+      opacity: 1;
+    transform: scaleX(1.05);
+}
